@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boda Karely & Rubén</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: #f3efe7; /* beige boda */
+        color: #4a4a4a;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    .container {
+        margin: auto;
+        padding: 25px;
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        animation: slideUp 1.3s ease;
+    }
+
+    @keyframes slideUp {
+        from {transform: translateY(40px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+
+    h1, h2 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    .names {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+
+    .date {
+        font-size: 1.4rem;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .photos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .photos img {
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+    .photos img:hover {
+        transform: scale(1.05);
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border: none;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    #countdown {
+        font-size: 2rem;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #7a5f43;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #d8c7a1;
+        color: #4a4a4a;
+        padding: 14px 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: #c5b38f;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Música de fondo -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/07/26/audio_f467e3c81d.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+    <h1>Invitación de Boda</h1>
+    <div class="names">Karely & Rubén</div>
+
+    <div class="date">📅 Viernes, 19 de diciembre de 2025</div>
+
+    <h2>Nuestras Fotos</h2>
+    <div class="photos">
+        <!-- Tú reemplazas estas imágenes -->
+        <img src="TU_IMAGEN_1.jpg" alt="Foto 1">
+        <img src="TU_IMAGEN_2.jpg" alt="Foto 2">
+        <img src="TU_IMAGEN_3.jpg" alt="Foto 3">
+    </div>
+
+    <h2>Ubicación — Salón Reina Madre</h2>
+
+    <!-- Mapa real con tu link -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.9361543924734!2d-98.29709802449791!3d26.017934999254572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665455bf319d9c1%3A0x5c7c4cf48fdbef89!2sSALON%20REINA%20MADRE!5e0!3m2!1ses-419!2smx!4v1700000000000">
+    </iframe>
+
+    <p>📍 Da clic en el mapa para abrirlo directamente en Google Maps.</p>
+
+    <h2>Cuenta regresiva para el gran día</h2>
+    <div id="countdown"></div>
+
+    <script>
+        const weddingDate = new Date("Dec 19, 2025 00:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + " días • " + hours + " hrs • " +
+                minutes + " min • " + seconds + " s";
+        }, 1000);
+    </script>
+
+    <h2>Confirmar asistencia</h2>
+    <a class="btn" href="https://wa.me/5210000000000?text=Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Karely%20y%20Rub%C3%A9n" target="_blank">
+        Confirmar por WhatsApp
+    </a>
+
+</div>
+
+</body>
+</html>
